@@ -11,6 +11,18 @@
     <name>swagger-codegen-project</name>
     <version>2.3.0-SNAPSHOT</version>
     <url>https://github.com/swagger-api/swagger-codegen</url>
+
+    <distributionManagement>
+        <repository>
+            <id>internal-releases</id>
+            <url>https://premise.jfrog.io/premise/private-local</url>
+        </repository>
+        <snapshotRepository>
+            <id>internal-snapshots</id>
+            <url>https://premise.jfrog.io/premise/private-snapshots-local</url>
+        </snapshotRepository>
+    </distributionManagement>
+
     <scm>
         <connection>scm:git:git@github.com:swagger-api/swagger-codegen.git</connection>
         <developerConnection>scm:git:git@github.com:swagger-api/swagger-codegen.git</developerConnection>
