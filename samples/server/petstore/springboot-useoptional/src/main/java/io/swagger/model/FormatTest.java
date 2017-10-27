@@ -7,14 +7,16 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.math.BigDecimal;
 import java.util.UUID;
-import org.joda.time.DateTime;
-import org.joda.time.LocalDate;
+import org.threeten.bp.LocalDate;
+import org.threeten.bp.OffsetDateTime;
+import org.springframework.validation.annotation.Validated;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 
 /**
  * FormatTest
  */
+@Validated
 
 public class FormatTest   {
   @JsonProperty("integer")
@@ -48,7 +50,7 @@ public class FormatTest   {
   private LocalDate date = null;
 
   @JsonProperty("dateTime")
-  private DateTime dateTime = null;
+  private OffsetDateTime dateTime = null;
 
   @JsonProperty("uuid")
   private UUID uuid = null;
@@ -69,7 +71,7 @@ public class FormatTest   {
   **/
   @ApiModelProperty(value = "")
 
- @Min(10) @Max(100)
+@Min(10) @Max(100) 
   public Integer getInteger() {
     return integer;
   }
@@ -91,7 +93,7 @@ public class FormatTest   {
   **/
   @ApiModelProperty(value = "")
 
- @Min(20) @Max(200)
+@Min(20) @Max(200) 
   public Integer getInt32() {
     return int32;
   }
@@ -135,7 +137,7 @@ public class FormatTest   {
   @NotNull
 
   @Valid
- @DecimalMin("32.1") @DecimalMax("543.2")
+@DecimalMin("32.1") @DecimalMax("543.2") 
   public BigDecimal getNumber() {
     return number;
   }
@@ -157,7 +159,7 @@ public class FormatTest   {
   **/
   @ApiModelProperty(value = "")
 
- @DecimalMin("54.3") @DecimalMax("987.6")
+@DecimalMin("54.3") @DecimalMax("987.6") 
   public Float getFloat() {
     return _float;
   }
@@ -179,7 +181,7 @@ public class FormatTest   {
   **/
   @ApiModelProperty(value = "")
 
- @DecimalMin("67.8") @DecimalMax("123.4")
+@DecimalMin("67.8") @DecimalMax("123.4") 
   public Double getDouble() {
     return _double;
   }
@@ -199,7 +201,7 @@ public class FormatTest   {
   **/
   @ApiModelProperty(value = "")
 
- @Pattern(regexp="/[a-z]/i")
+@Pattern(regexp="/[a-z]/i") 
   public String getString() {
     return string;
   }
@@ -220,7 +222,7 @@ public class FormatTest   {
   @ApiModelProperty(required = true, value = "")
   @NotNull
 
- @Pattern(regexp="^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$")
+@Pattern(regexp="^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$") 
   public byte[] getByte() {
     return _byte;
   }
@@ -271,7 +273,7 @@ public class FormatTest   {
     this.date = date;
   }
 
-  public FormatTest dateTime(DateTime dateTime) {
+  public FormatTest dateTime(OffsetDateTime dateTime) {
     this.dateTime = dateTime;
     return this;
   }
@@ -284,11 +286,11 @@ public class FormatTest   {
 
   @Valid
 
-  public DateTime getDateTime() {
+  public OffsetDateTime getDateTime() {
     return dateTime;
   }
 
-  public void setDateTime(DateTime dateTime) {
+  public void setDateTime(OffsetDateTime dateTime) {
     this.dateTime = dateTime;
   }
 
@@ -325,7 +327,7 @@ public class FormatTest   {
   @ApiModelProperty(required = true, value = "")
   @NotNull
 
- @Size(min=10,max=64)
+@Size(min=10,max=64) 
   public String getPassword() {
     return password;
   }
