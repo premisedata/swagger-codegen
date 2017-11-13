@@ -19,8 +19,8 @@
     </distributionManagement>
 
     <scm>
-        <connection>scm:git:git@github.com:swagger-api/swagger-codegen.git</connection>
-        <developerConnection>scm:git:git@github.com:swagger-api/swagger-codegen.git</developerConnection>
+        <connection>scm:git:git@github.com:premisedata/swagger-codegen.git</connection>
+        <developerConnection>scm:git:git@github.com:premisedata/swagger-codegen.git</developerConnection>
         <url>https://github.com/premisedata/swagger-codegen</url>
     </scm>
     <developers>
